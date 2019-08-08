@@ -1,0 +1,39 @@
+.field {
+    width: 80%;
+    height: 40px;
+    background-color: pink;
+    border: 1px solid #000;
+    margin: 40px;
+}
+
+.healthbar {
+    height: 40px;
+    background-color: lawngreen;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+button  {
+    font-weight: 700;
+    color: midnightblue;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+}
+button:hover {
+    background: rgb(53, 167, 110);
+}
+button:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px yellow inset;
+}
+#give-up {
+    background: rgb(199, 56, 39);
+    box-shadow: 0 -3px rgb(167, 28, 33) inset;
+}
+

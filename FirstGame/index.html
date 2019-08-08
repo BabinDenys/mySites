@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Monster Game</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div id="app">
+    <section>
+        <div>
+            <h1 :title="playerTitle">YOU</h1>
+            <p>
+                {{ healthYou }}
+            </p>
+            <div class="field">
+                <div class="healthbar" :style="healthActionYou">
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 :title="monsterTitle">MONSTER</h1>
+            <p>
+                {{ healthMonster }}
+            </p>
+            <div class="field">
+                <div class="healthbar" :style="healthActionMonster">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section v-show="!showGame">
+        <div>
+            <button id="start-game" class="buttons"
+                    @click="startNewGame"
+
+            >START NEW GAME
+            </button>
+        </div>
+    </section>
+    <section
+            v-show="showGame">
+        <div class="buttons">
+            <button id="attack" @click="action">ATTACK</button>
+            <button id="special-attack" @click="actionSpecial">SPECIAL ATTACK</button>
+            <button id="heal" @click="actionHealth">HEAL</button>
+            <button id="give-up" @click="showGame = !showGame">GIVE UP</button>
+        </div>
+    </section>
+    <section>
+        <div>
+            <ol>
+                <li v-for="elements in listActions">
+                    {{elements}}
+
+                </li>
+            </ol>
+        </div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
